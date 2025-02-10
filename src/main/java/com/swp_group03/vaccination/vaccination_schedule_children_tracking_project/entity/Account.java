@@ -44,5 +44,7 @@ public class Account {
     @Column(name = "status")
     private boolean Status;
 
+    @Column(name = "URL_image")
+    private String url_image;
 
 }

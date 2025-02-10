@@ -1,13 +1,12 @@
 package com.swp_group03.vaccination.vaccination_schedule_children_tracking_project.controller;
 
-import com.swp_group03.vaccination.vaccination_schedule_children_tracking_project.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+
+
+
 public class UserController {
-    @Autowired
-    private UserService userService;
+
+
 
 
 }

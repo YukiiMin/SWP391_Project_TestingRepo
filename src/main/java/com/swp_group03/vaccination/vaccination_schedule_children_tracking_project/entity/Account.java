@@ -8,14 +8,11 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "Account")
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private int Account_ID;
+    private String Account_ID;
 
     @Column(name = "username", length = 30,unique=true)
     private String Username;

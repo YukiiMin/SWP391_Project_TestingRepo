@@ -7,19 +7,34 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+
 public class Account_Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private int Role_ID;
+    private String Role_ID;
     @Column
     private String Role_Name;
-    @OneToOne
-    @JoinColumn(name = "Account_ID")
-    private Account Account_ID;
+
+
+    public Account_Role() {
+
+    }
+
+    public Account_Role(String Role_Name) {
+
+    }
+
+    public String getRole_ID() {
+        return Role_ID;
+    }
+
+    public String getRole_Name() {
+        return Role_Name;
+    }
+
+    public void setRole_Name(String role_Name) {
+        Role_Name = role_Name;
+    }
 
 }

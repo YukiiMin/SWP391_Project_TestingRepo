@@ -21,11 +21,11 @@ public class Account {
     @Column(name = "password", length = 50)
     private String Password;
 
-    @Column(name = "firstName", length = 100)
+    @Column(name = "first_Name", length = 100)
     @Nationalized
     private String First_Name;
 
-    @Column(name = "lastName", length = 100)
+    @Column(name = "last_Name", length = 100)
     private String Last_Name;
 
     @Column(name = "email", length = 50)

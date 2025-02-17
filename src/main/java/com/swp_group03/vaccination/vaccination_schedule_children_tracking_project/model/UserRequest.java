@@ -9,9 +9,9 @@ public class UserRequest {
     private String Password;
 
 
-    private String First_Name;
+    private String FirstName;
 
-    private String Last_Name;
+    private String LastName;
 
 
     private String Email;
@@ -30,19 +30,17 @@ public class UserRequest {
     public UserRequest() {
     }
 
-    public UserRequest(String username, String password, String first_Name, String last_Name,
-                       String email, int phone_number, String address, String gender, String url_image,
-                       boolean status) {
+    public UserRequest(String username, String password, String firstName, String lastName, String email, int phone_number, String address, String gender, boolean status, String url_image) {
         Username = username;
         Password = password;
-        First_Name = first_Name;
-        Last_Name = last_Name;
+        FirstName = firstName;
+        LastName = lastName;
         Email = email;
         Phone_number = phone_number;
         Address = address;
         Gender = gender;
-        this.url_image = url_image;
         Status = status;
+        this.url_image = url_image;
     }
 
     public String getUsername() {
@@ -61,20 +59,20 @@ public class UserRequest {
         Password = password;
     }
 
-    public String getFirst_Name() {
-        return First_Name;
+    public String getFirstName() {
+        return FirstName;
     }
 
-    public void setFirst_Name(String first_Name) {
-        First_Name = first_Name;
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
     }
 
-    public String getLast_Name() {
-        return Last_Name;
+    public String getLastName() {
+        return LastName;
     }
 
-    public void setLast_Name(String last_Name) {
-        Last_Name = last_Name;
+    public void setLastName(String lastName) {
+        LastName = lastName;
     }
 
     public String getEmail() {

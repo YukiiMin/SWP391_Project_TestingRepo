@@ -1,10 +1,11 @@
 package com.swp_group03.vaccination.vaccination_schedule_children_tracking_project.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+/*import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Setter;*/
+import org.hibernate.annotations.Nationalized;
 
 @Entity
 @Table(name = "Account")
@@ -21,6 +22,7 @@ public class Account {
     private String Password;
 
     @Column(name = "firstName", length = 100)
+    @Nationalized
     private String First_Name;
 
     @Column(name = "lastName", length = 100)
@@ -33,6 +35,7 @@ public class Account {
     private int Phone_number;
 
     @Column(name = "address", length = 100)
+    @Nationalized
     private String Address;
 
     @Column(name = "gender", length = 6)

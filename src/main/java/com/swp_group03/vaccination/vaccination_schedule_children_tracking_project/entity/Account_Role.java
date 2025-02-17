@@ -6,8 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+import java.util.List;
 
+@Entity
+@Table(name = "Account_Role")
 public class Account_Role {
 
     @Id
@@ -16,6 +18,8 @@ public class Account_Role {
     @Column
     private String Role_Name;
 
+    @OneToMany(mappedBy = "role",cascade = CascadeType.ALL, fetch = FetchType.LAZY,orphanRemoval = true)
+    private List<Account> accountList;
 
     public Account_Role() {
 

@@ -2,12 +2,20 @@ package com.swp_group03.vaccination.vaccination_schedule_children_tracking_proje
 
 
 import com.swp_group03.vaccination.vaccination_schedule_children_tracking_project.entity.Account;
-import com.swp_group03.vaccination.vaccination_schedule_children_tracking_project.model.AccRequest;
+import com.swp_group03.vaccination.vaccination_schedule_children_tracking_project.model.UserRequest;
 import com.swp_group03.vaccination.vaccination_schedule_children_tracking_project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
+
 public class UserController {
 
     @Autowired
@@ -16,16 +24,9 @@ public class UserController {
 
 
     @PostMapping("/register")
-    public Account registerUser(@RequestBody AccRequest request){
-        return userService.createAccount(request);
+    public Account registerUser(@RequestBody UserRequest request){
+       return userService.createAccount(request);
     }
-
-
-//    @GetMapping("/{username}")
-//    public Account loginUser(@PathVariable String username){
-//        return userService.checkLogin(username);
-//    }
-
 
 
 }

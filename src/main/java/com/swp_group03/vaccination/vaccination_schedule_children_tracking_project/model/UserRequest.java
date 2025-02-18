@@ -1,76 +1,46 @@
-package com.swp_group03.vaccination.vaccination_schedule_children_tracking_project.entity;
+package com.swp_group03.vaccination.vaccination_schedule_children_tracking_project.model;
 
-import jakarta.persistence.*;
-/*import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;*/
-import org.hibernate.annotations.Nationalized;
+import jakarta.persistence.Column;
 
-@Entity
-@Table(name = "Account")
+public class UserRequest {
 
-public class Account {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String Account_ID;
-
-    @Column(name = "username", length = 30,unique=true)
     private String Username;
 
-    @Column(name = "password", length = 50)
     private String Password;
 
-    @Column(name = "first_Name", length = 100)
-    @Nationalized
-    private String First_Name;
 
-    @Column(name = "last_Name", length = 100)
-    private String Last_Name;
+    private String first_Name;
 
-    @Column(name = "email", length = 50)
+    private String last_Name;
+
+
     private String Email;
 
-    @Column(name = "phoneNumber", length = 10)
+
     private int Phone_number;
 
-    @Column(name = "address", length = 100)
-    @Nationalized
     private String Address;
 
-    @Column(name = "gender", length = 6)
     private String Gender;
 
-    @Column(name = "status")
     private boolean Status;
 
-    @Column(name = "URL_image")
     private String url_image;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Role_ID")
-    private Account_Role role;
-
-    public Account() {
-
+    public UserRequest() {
     }
 
-    public Account(String username, String password, String first_Name, String last_Name, String email, int phone_number, String address, String gender, boolean status, String url_image, Account_Role role) {
+    public UserRequest(String username, String password, String first_Name, String last_Name, String email, int phone_number, String address, String gender, boolean status, String url_image) {
         Username = username;
         Password = password;
-        First_Name = first_Name;
-        Last_Name = last_Name;
+        this.first_Name = first_Name;
+        this.last_Name = last_Name;
         Email = email;
         Phone_number = phone_number;
         Address = address;
         Gender = gender;
         Status = status;
         this.url_image = url_image;
-        this.role = role;
-    }
-
-    public String getAccount_ID() {
-        return Account_ID;
     }
 
     public String getUsername() {
@@ -90,19 +60,19 @@ public class Account {
     }
 
     public String getFirst_Name() {
-        return First_Name;
+        return first_Name;
     }
 
     public void setFirst_Name(String first_Name) {
-        First_Name = first_Name;
+        this.first_Name = first_Name;
     }
 
     public String getLast_Name() {
-        return Last_Name;
+        return last_Name;
     }
 
     public void setLast_Name(String last_Name) {
-        Last_Name = last_Name;
+        this.last_Name = last_Name;
     }
 
     public String getEmail() {
@@ -151,13 +121,5 @@ public class Account {
 
     public void setUrl_image(String url_image) {
         this.url_image = url_image;
-    }
-
-    public Account_Role getRole() {
-        return role;
-    }
-
-    public void setRole(Account_Role role) {
-        this.role = role;
     }
 }

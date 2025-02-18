@@ -13,8 +13,7 @@ public class UserService {
     private UserRepo userRepo;
 
     public Account createAccount(UserRequest request){
-        account.setUsername(request.getUsername());
-        account.setPassword(request.getPassword());
+
         account.setFirst_Name(request.getFirst_Name());
         account.setLast_Name(request.getLast_Name());
         account.setEmail(request.getEmail());
